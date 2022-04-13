@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/apps_list_border"
+        android:layout_width="352dp"
+        android:layout_height="72dp"
+        android:background="@drawable/rounded_rectangle2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/apps_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/apps_icon"
+        app:layout_constraintTop_toTopOf="@id/apps_list_border"
+        app:layout_constraintBottom_toBottomOf="@id/apps_list_border"
+        app:layout_constraintStart_toStartOf="@id/apps_list_border" />
+
+    <TextView
+        android:id="@+id/apps_name"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Messenger"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/apps_icon"
+        app:layout_constraintTop_toTopOf="@id/apps_list_border"
+        app:layout_constraintBottom_toBottomOf="@id/apps_list_border"/>
+
+    <ImageButton
+        android:id="@+id/arrow_right"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/arrow_right"
+        app:layout_constraintTop_toTopOf="@id/apps_list_border"
+        app:layout_constraintBottom_toBottomOf="@id/apps_list_border"
+        app:layout_constraintStart_toEndOf="@id/apps_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
