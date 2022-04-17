@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WidgetApp">
         <activity
+            android:name=".ShortcutCustomize"
+            android:exported="false" />
+        <activity
             android:name=".SelectApps"
             android:exported="false" />
         <activity
