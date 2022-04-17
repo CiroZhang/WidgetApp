@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WidgetApp">
         <activity
+            android:name=".SelectApps"
+            android:exported="false" />
+        <activity
             android:name=".CreateShortcut"
             android:exported="true" />
-        <activity android:name=".ShortcutHome"
+        <activity
+            android:name=".ShortcutHome"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

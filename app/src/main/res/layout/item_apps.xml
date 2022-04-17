@@ -18,7 +18,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:background="@drawable/apps_icon"
+        android:background="@drawable/messenger_icon_small"
         app:layout_constraintTop_toTopOf="@id/apps_list_border"
         app:layout_constraintBottom_toBottomOf="@id/apps_list_border"
         app:layout_constraintStart_toStartOf="@id/apps_list_border" />
@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Messenger"
+        android:fontFamily="@font/roboto_medium"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/apps_icon"
