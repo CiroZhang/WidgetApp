@@ -19,7 +19,7 @@
             android:name=".CreateShortcut"
             android:exported="true" />
         <activity
-            android:name=".ShortcutHome"
+            android:name=".Screens.HomeScreen"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
