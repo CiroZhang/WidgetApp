@@ -2,6 +2,7 @@ package com.example.widgetapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class HomeScreen extends AppCompatActivity {
             public void onClick(View view) {
                 MainActivity.shortcutsList.add(new Shortcut(n));
                 n++;
+                HomeAdapter.notifyDataSetChanged();
             }
         });
 
@@ -40,6 +42,8 @@ public class HomeScreen extends AppCompatActivity {
         HomeAdapter = new HomeAdapter(this, MainActivity.shortcutsList);
         HomeRecyclerView = findViewById(R.id.shortcut_list_view);
         HomeRecyclerView.setAdapter(HomeAdapter);
-        HomeRecyclerView.setLayoutManager(new GridLayoutManager(this, 4, RecyclerView.HORIZONTAL, false));
+        HomeRecyclerView.setLayoutManager(new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false));
+        // new LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        // new GridLayoutManager(this, 4, RecyclerView.HORIZONTAL, false)
     }
 }
