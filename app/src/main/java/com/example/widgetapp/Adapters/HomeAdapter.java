@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.widgetapp.R;
@@ -26,10 +27,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
 
     public class ShortcutViewHolder extends RecyclerView.ViewHolder {
         private TextView shortcut_name;
+        private ConstraintLayout wholeLayout;
 
         public ShortcutViewHolder(@NonNull View itemView) {
             super(itemView);
             shortcut_name = itemView.findViewById(R.id.shortcut_name);
+            wholeLayout = itemView.findViewById(R.id.shortcut_full_icon);
         }
     }
 
@@ -44,6 +47,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
     public void onBindViewHolder(@NonNull HomeAdapter.ShortcutViewHolder holder, int position) {
         Shortcut shortcut = shortcutsList.get(position);
         holder.shortcut_name.setText(shortcut.getName());
+        holder.wholeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("HI");
+            }
+        });
     }
 
     @Override
