@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,7 +28,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
 
     public class ShortcutViewHolder extends RecyclerView.ViewHolder {
         private TextView shortcut_name;
-        private ConstraintLayout wholeLayout;
+        private LinearLayout wholeLayout;
 
         public ShortcutViewHolder(@NonNull View itemView) {
             super(itemView);
