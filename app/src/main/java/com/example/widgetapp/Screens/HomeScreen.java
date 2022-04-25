@@ -29,7 +29,7 @@ public class HomeScreen extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.shortcutsList.add(new Shortcut(n));
+                MainActivity.shortcutsList.add(new Shortcut(view,n));
                 n++;
                 HomeAdapter.notifyDataSetChanged();
             }
