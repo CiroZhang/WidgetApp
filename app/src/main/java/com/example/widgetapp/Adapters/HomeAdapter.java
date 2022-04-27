@@ -52,6 +52,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
             @Override
             public void onClick(View view) {
                 System.out.println("HI");
+                context.startActivity(shortcutsList.get(0).getAction());
+
             }
         });
     }

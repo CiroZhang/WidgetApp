@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WidgetApp</string>
+    <string name="share_intent_title" />
+    <string name="share_whatsapp_not_instaled" />
 </resources>
