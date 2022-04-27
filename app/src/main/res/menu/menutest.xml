@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
-        android:id="@+id/one"
-        android:title="One"
-        android:icon="@drawable/icon_gallery"/>
-    <item
-        android:id="@+id/two"
-        android:icon="@drawable/back_button"
-        android:title="Two" />
-    <item
-        android:id="@+id/three"
-        android:title="Three"/>
+        android:id="@+id/action_new"
+        android:icon="@drawable/icon_video"
+        android:title="hello">
+
+        <menu>
+
+            <item
+                android:id="@+id/action_photo"
+                android:icon="@drawable/icon_message"
+                android:title="yes"
+                app:showAsAction="always|withText" />
+
+        </menu>
+    </item>
+
 </menu>

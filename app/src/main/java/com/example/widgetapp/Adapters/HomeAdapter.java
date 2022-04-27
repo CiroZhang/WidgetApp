@@ -1,13 +1,19 @@
 package com.example.widgetapp.Adapters;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,6 +35,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
     public class ShortcutViewHolder extends RecyclerView.ViewHolder {
         private TextView shortcut_name;
         private LinearLayout wholeLayout;
+
+
 
         public ShortcutViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,8 +61,22 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
             public void onClick(View view) {
                 System.out.println("HI");
                 context.startActivity(shortcutsList.get(0).getAction());
-
             }
+        });
+
+        PopupMenu popupMenu = new PopupMenu(context, holder.wholeLayout);
+        popupMenu.getMenuInflater().inflate(R.menu.menutest, popupMenu.getMenu());
+        popupMenu.setForceShowIcon(true);
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem menu_item) {
+                switch (menu_item.getItemId()) {
+                    case R.id.icon_explore:
+                    case R.id.icon_forum:
+                        break;
+                }
+                return true;
+            }
+
         });
     }
 

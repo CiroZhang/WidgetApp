@@ -46,8 +46,8 @@ public class Shortcut {
 
         }
 
-//        action = sendFacebook("100003863535616");
-//        action = email(new String[]{"oscarboom214@gmail.com"},"hello","hello ocsar");
+        action = sendFacebook("100003863535616");
+//        action = email(new String[]{"oscarboom214@gmail.com"},"hello","hello oscar");
 //        action = shareTwitter(view,"Hello","","@Ciro","cool");
 
     }
