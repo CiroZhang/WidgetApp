@@ -1,6 +1,10 @@
 package com.example.widgetapp.Screens;
 
+import static java.security.AccessController.getContext;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 
 import com.example.widgetapp.Adapters.HomeAdapter;
 import com.example.widgetapp.MainActivity;
@@ -36,6 +41,14 @@ public class HomeScreen extends AppCompatActivity {
         });
 
         setupRecyclerView();
+
+        PopupMenu menu = new PopupMenu(getContext(), overflowImageView);
+        menu.inflate(R.menu.menutest);
+        menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() { ... });
+
+        MenuPopupHelper menuHelper = new MenuPopupHelper(getContext(), (MenuBuilder) menu.getMenu());
+        menuHelper.setForceShowIcon(true);
+        menuHelper.show();
     }
 
     void setupRecyclerView() {
