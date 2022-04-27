@@ -19,13 +19,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WidgetApp">
         <activity
-            android:name=".ShortcutCustomize"
+            android:name=".Screens.ShortcutCustomize"
             android:exported="false" />
         <activity
-            android:name=".SelectApps"
+            android:name=".Screens.SelectApps"
             android:exported="false" />
         <activity
-            android:name=".CreateShortcut"
+            android:name=".Screens.CreateShortcut"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

@@ -1,8 +1,10 @@
-package com.example.widgetapp;
+package com.example.widgetapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.widgetapp.R;
 
 public class CreateShortcut extends AppCompatActivity {
 

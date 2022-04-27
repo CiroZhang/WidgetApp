@@ -24,6 +24,11 @@ public class Shortcut {
     private String name = "Shortcut Name";
     private Intent action;
 
+    public Shortcut(){}
+
+    public Shortcut(String name){
+        this.name = name;
+    }
 
     public Shortcut(View view, int n) {
         this.name += String.valueOf(n);

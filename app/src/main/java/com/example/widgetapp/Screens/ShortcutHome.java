@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -23,7 +24,6 @@ public class ShortcutHome extends AppCompatActivity {
 
     HomeAdapter HomeAdapter;
     RecyclerView HomeRecyclerView;
-    int n = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,21 +34,37 @@ public class ShortcutHome extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.shortcutsList.add(new Shortcut(view,n));
-                n++;
-                HomeAdapter.notifyDataSetChanged();
+                openNextScreen();
             }
         });
 
         setupRecyclerView();
+        Shortcut messenger = new Shortcut("Messenger");
+        Shortcut whatsapp = new Shortcut("WhatsApp");
+        Shortcut zoom = new Shortcut("Zoom");
+        Shortcut googleduo = new Shortcut("Google Duo");
+        Shortcut wechat = new Shortcut("WeChat");
+        Shortcut twitter = new Shortcut("Twitter");
+
+        MainActivity.availableShortcuts.add(messenger);
+        MainActivity.availableShortcuts.add(whatsapp);
+        MainActivity.availableShortcuts.add(zoom);
+        MainActivity.availableShortcuts.add(googleduo);
+        MainActivity.availableShortcuts.add(wechat);
+        MainActivity.availableShortcuts.add(twitter);
     }
 
-    void setupRecyclerView() {
+    private void setupRecyclerView() {
         HomeAdapter = new HomeAdapter(this, MainActivity.shortcutsList);
         HomeRecyclerView = findViewById(R.id.shortcut_list_view);
         HomeRecyclerView.setAdapter(HomeAdapter);
         HomeRecyclerView.setLayoutManager(new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false));
         // new LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         // new GridLayoutManager(this, 4, RecyclerView.HORIZONTAL, false)
+    }
+
+    private void openNextScreen() {
+        Intent open = new Intent(this, SelectApps.class);
+        startActivity(open);
     }
 }
