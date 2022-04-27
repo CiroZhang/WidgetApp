@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/one"
+        android:title="One"
+        android:icon="@drawable/icon_gallery"/>
+    <item
+        android:id="@+id/two"
+        android:icon="@drawable/back_button"
+        android:title="Two" />
+    <item
+        android:id="@+id/three"
+        android:title="Three"/>
 </menu>

@@ -19,7 +19,7 @@ import com.example.widgetapp.MainActivity;
 import com.example.widgetapp.R;
 import com.example.widgetapp.Shortcut;
 
-public class HomeScreen extends AppCompatActivity {
+public class ShortcutHome extends AppCompatActivity {
 
     HomeAdapter HomeAdapter;
     RecyclerView HomeRecyclerView;
@@ -41,14 +41,6 @@ public class HomeScreen extends AppCompatActivity {
         });
 
         setupRecyclerView();
-
-        PopupMenu menu = new PopupMenu(getContext(), overflowImageView);
-        menu.inflate(R.menu.menutest);
-        menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() { ... });
-
-        MenuPopupHelper menuHelper = new MenuPopupHelper(getContext(), (MenuBuilder) menu.getMenu());
-        menuHelper.setForceShowIcon(true);
-        menuHelper.show();
     }
 
     void setupRecyclerView() {
