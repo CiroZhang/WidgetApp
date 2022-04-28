@@ -57,7 +57,15 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.AppViewHolder>
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openNextScreen(view);
+                System.out.println("BEFORE");
+                openNextScreen();
+                System.out.println("AFTER");
+            }
+        });
+        holder.app_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNextScreen();
             }
         });
     }
@@ -67,8 +75,10 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.AppViewHolder>
         return availableShortcuts.size();
     }
 
-    private void openNextScreen(View v) {
-        Intent open = new Intent(v.getContext(), CreateShortcut.class);
+    private void openNextScreen() {
+        System.out.println("INBEFORE");
+        Intent open = new Intent(context, CreateShortcut.class);
         context.startActivity(open);
+        System.out.println("INAFTER");
     }
 }

@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static void updateAvailableShortcuts() {
         updatedSearchShortcuts.clear();
-        updatedSearchShortcuts = (ArrayList<Shortcut>)availableShortcuts.clone();
+        for (Shortcut s : availableShortcuts) {
+            updatedSearchShortcuts.add(s);
+        }
     }
 }

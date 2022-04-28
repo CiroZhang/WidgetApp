@@ -68,22 +68,16 @@ public class SelectApps extends AppCompatActivity {
 
                 if (enteredSearchText.isEmpty() || editable.length() == 0 || enteredSearchText.matches("") || enteredSearchText == null) {
                     MainActivity.updateAvailableShortcuts();
-                    System.out.println(MainActivity.updatedSearchShortcuts.size());
                 }
                 else {
                     MainActivity.updatedSearchShortcuts.clear();
                     for (Shortcut shortcut : MainActivity.availableShortcuts) {
                         if (shortcut.getName().toLowerCase().contains(enteredSearchText)) {
-                            System.out.println(shortcut.getName());
                             MainActivity.updatedSearchShortcuts.add(shortcut);
-                            System.out.println(MainActivity.updatedSearchShortcuts.size());
                         }
                     }
                 }
                 AppsAdapter.notifyDataSetChanged();
-                for (int i = 0; i < MainActivity.updatedSearchShortcuts.size(); i++) {
-                    AppsAdapter.notifyItemChanged(i);
-                }
             }
         });
 
@@ -93,9 +87,6 @@ public class SelectApps extends AppCompatActivity {
                 searchTextField.getText().clear();
                 MainActivity.updateAvailableShortcuts();
                 AppsAdapter.notifyDataSetChanged();
-                for (int i = 0; i < MainActivity.updatedSearchShortcuts.size(); i++) {
-                    AppsAdapter.notifyItemChanged(i);
-                }
                 System.out.println(MainActivity.updatedSearchShortcuts.size());
             }
         });
