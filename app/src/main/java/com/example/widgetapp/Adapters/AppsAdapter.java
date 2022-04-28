@@ -39,7 +39,8 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.AppViewHolder>
             super(itemView);
             app_icon = itemView.findViewById(R.id.apps_icon);
             app_name = itemView.findViewById(R.id.apps_name);
-            layout = itemView.findViewById(R.id.selectapp_layout);
+            layout = itemView.findViewById(R.id.select_app_layout);
+            layout.setClickable(true);
         }
     }
 
