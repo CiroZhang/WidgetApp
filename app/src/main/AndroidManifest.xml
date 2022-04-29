@@ -26,6 +26,7 @@
             android:exported="false" />
         <activity
             android:name=".Screens.CreateShortcut"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

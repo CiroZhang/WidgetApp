@@ -50,11 +50,11 @@ public class CreateShortcut extends AppCompatActivity {
             }
         });
 
-        setupRecyclerView();
+        setupRecyclerView(nextButton);
     }
 
-    private void setupRecyclerView() {
-        ActionsAdapter = new ActionsAdapter(this, MainActivity.shortcutActions);
+    private void setupRecyclerView(ImageButton nextButton) {
+        ActionsAdapter = new ActionsAdapter(this, MainActivity.shortcutActions, nextButton);
         ActionsRecyclerView = findViewById(R.id.apps_list_view);
         ActionsRecyclerView.setAdapter(ActionsAdapter);
         ActionsRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
