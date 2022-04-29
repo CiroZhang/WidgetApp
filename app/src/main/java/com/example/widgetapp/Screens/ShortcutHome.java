@@ -20,6 +20,8 @@ import com.example.widgetapp.MainActivity;
 import com.example.widgetapp.R;
 import com.example.widgetapp.Shortcut;
 
+import java.util.ArrayList;
+
 public class ShortcutHome extends AppCompatActivity {
 
     HomeAdapter HomeAdapter;
@@ -39,12 +41,14 @@ public class ShortcutHome extends AppCompatActivity {
         });
 
         setupRecyclerView();
-        Shortcut messenger = new Shortcut("Messenger");
-        Shortcut whatsapp = new Shortcut("WhatsApp");
-        Shortcut zoom = new Shortcut("Zoom");
-        Shortcut googleduo = new Shortcut("Google Duo");
-        Shortcut wechat = new Shortcut("WeChat");
-        Shortcut twitter = new Shortcut("Twitter");
+        ArrayList<String> data;
+
+        Shortcut messenger = new Shortcut("Messenger", "Message");
+        Shortcut whatsapp = new Shortcut("Share WhatsApp", "ShareWhatsApp");
+        Shortcut zoom = new Shortcut("Zoom","none");
+        Shortcut googleduo = new Shortcut("GoogleMap", "SearchGoogleMaps");
+        Shortcut wechat = new Shortcut("WeChat","none");
+        Shortcut twitter = new Shortcut("Share Twitter", "ShareTwitter");
 
         MainActivity.availableShortcuts.add(messenger);
         MainActivity.availableShortcuts.add(whatsapp);

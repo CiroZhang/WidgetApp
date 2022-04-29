@@ -15,46 +15,89 @@ import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 public class Shortcut {
     public enum Type{
-        Email, ShareTwitter
+        Email, Message,Call,OpenWeb,OpenApp,
+        SendFacebook,ShareFacebook,
+        ShareTwitter,
+        ShareWhatsapp,
+        SearchGoogleMap;
     }
+
     private String name = "Shortcut Name";
+    private String typeString;
     private Intent action;
+    private ArrayList<String> info = new ArrayList<>();
 
-    public Shortcut(){}
-
-    public Shortcut(String name){
+    public Shortcut(String name, String typeString) {
         this.name = name;
-    }
+        this.typeString = typeString;
 
-    public Shortcut(View view, int n) {
-        this.name += String.valueOf(n);
-        String typeString = Type.ShareTwitter.name();
-        Type type = Type.valueOf(typeString);
-//        action = new Intent(Intent.ACTION_VIEW);
-        action = new Intent(Intent.ACTION_SEND);
-        switch (type) {
 
-            case Email:
-                action = email(new String[]{"oscarboom214@gmail.com"},"hello","hello ocsar");
-                break;
-
-            case ShareTwitter:
-                action = shareTwitter(view,"Hello","","@Ciro","cool");
-                break;
-
-            default:
-                break;
-
-        }
-
-        action = sendFacebook("100003863535616");
-//        action = email(new String[]{"oscarboom214@gmail.com"},"hello","hello oscar");
+//        action = sendFacebook("100003863535616");
+//        action = email(new String[]{"oscarboom214@gmail.com"},"hello","hello ocsar");
 //        action = shareTwitter(view,"Hello","","@Ciro","cool");
 
+    }
+
+    public void run(View view){
+        Type type = Type.valueOf(typeString);
+        if (info.isEmpty()){
+            System.out.println("Info not set");
+        }
+        else {
+            switch (type) {
+
+                case Email:
+                    action = email(info.get(0).split(","), info.get(1), info.get(2));
+                    break;
+
+                case Message:
+                    action = message(info.get(0));
+                    break;
+
+                case Call:
+                    action = call(info.get(0));
+                    break;
+
+                case OpenWeb:
+                    action = openWebsite(info.get(0));
+                    break;
+
+                case OpenApp:
+                    action = openApp(view, info.get(0));
+                    break;
+
+                case SendFacebook:
+                    action = sendFacebook(info.get(0));
+                    break;
+
+                case ShareFacebook:
+                    action = shareFacebook(view, info.get(0));
+                    break;
+
+                case ShareTwitter:
+                    action = shareTwitter(view, info.get(0), "", info.get(1), info.get(2));
+                    break;
+
+                case ShareWhatsapp:
+                    action = shareWhatsapp(view, info.get(0), info.get(1));
+                    break;
+
+                case SearchGoogleMap:
+                    action = searchGoogleMaps(info.get(0));
+                    break;
+
+
+                default:
+                    break;
+            }
+            view.getContext().startActivity(action);
+        }
     }
 
     public String getName() {
@@ -65,6 +108,9 @@ public class Shortcut {
     }
     public void setName(String name) {
         this.name = name;
+    }
+    public void setInfo(ArrayList<String> info){
+        this.info = info;
     }
 
     //General Android
@@ -100,6 +146,9 @@ public class Shortcut {
     }
 
     //Facebook
+    public Intent searchFacebook(String search){
+        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/search/top?q="+search));
+    }
     public Intent sendFacebook(String user){
         Uri uri = Uri.parse("fb-messenger://user/" + user);
         Intent toMessenger= new Intent(Intent.ACTION_VIEW, uri);
@@ -132,6 +181,9 @@ public class Shortcut {
     }
 
     //Twitter
+    public Intent searchTwitter(String search){
+        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://twitter.com/search?q="+search));
+    }
     public Intent shareTwitter(View view, String text, String url, String via, String hashtags) {
         StringBuilder tweetUrl = new StringBuilder("https://twitter.com/intent/tweet?text=");
         tweetUrl.append(TextUtils.isEmpty(text) ? urlEncode(" ") : urlEncode(text));
@@ -184,9 +236,24 @@ public class Shortcut {
 
     //Zoom
 
-    //Youtube
+
+    //Google
+    public Intent searchGoogle(String search){
+        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/search?q="+search));
+    }
+    public Intent searchGoogleMaps(String search){
+        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/maps/search/"+search));
+    }
+    public Intent searchYoutube(String search){
+        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.youtube.com/results?search_query="+search));
+    }
+    public Intent openGmail(){
+        return new Intent(Intent.ACTION_VIEW,Uri.parse(" https://mail.google.com/mail/u/0/"));
+    };
+
 
     //Wechat
+
 
 
 
