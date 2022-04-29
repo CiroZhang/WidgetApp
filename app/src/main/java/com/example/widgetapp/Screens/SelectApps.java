@@ -87,7 +87,6 @@ public class SelectApps extends AppCompatActivity {
                 searchTextField.getText().clear();
                 MainActivity.updateAvailableShortcuts();
                 AppsAdapter.notifyDataSetChanged();
-                System.out.println(MainActivity.updatedSearchShortcuts.size());
             }
         });
 

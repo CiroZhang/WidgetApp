@@ -15,12 +15,14 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 
+import com.example.widgetapp.Action;
 import com.example.widgetapp.Adapters.HomeAdapter;
 import com.example.widgetapp.MainActivity;
 import com.example.widgetapp.R;
 import com.example.widgetapp.Shortcut;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ShortcutHome extends AppCompatActivity {
 
@@ -43,12 +45,12 @@ public class ShortcutHome extends AppCompatActivity {
         setupRecyclerView();
         ArrayList<String> data;
 
-        Shortcut messenger = new Shortcut("Messenger", "Message");
-        Shortcut whatsapp = new Shortcut("Share WhatsApp", "ShareWhatsApp");
-        Shortcut zoom = new Shortcut("Zoom","none");
-        Shortcut googleduo = new Shortcut("GoogleMap", "SearchGoogleMaps");
-        Shortcut wechat = new Shortcut("WeChat","none");
-        Shortcut twitter = new Shortcut("Share Twitter", "ShareTwitter");
+        Shortcut messenger = new Shortcut("Messenger", "Message", new ArrayList<>(Arrays.asList(new Action("Message","Open messages with a specific person"), new Action("Open App","Open the Messenger App"))));
+        Shortcut whatsapp = new Shortcut("Share WhatsApp", "ShareWhatsApp", new ArrayList<>());
+        Shortcut zoom = new Shortcut("Zoom","none", new ArrayList<>());
+        Shortcut googleduo = new Shortcut("GoogleMap", "SearchGoogleMaps", new ArrayList<>());
+        Shortcut wechat = new Shortcut("WeChat","none", new ArrayList<>());
+        Shortcut twitter = new Shortcut("Share Twitter", "ShareTwitter", new ArrayList<>());
 
         MainActivity.availableShortcuts.add(messenger);
         MainActivity.availableShortcuts.add(whatsapp);

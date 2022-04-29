@@ -11,6 +11,9 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Shortcut> shortcutsList = new ArrayList<>();
     public static ArrayList<Shortcut> availableShortcuts = new ArrayList<>();
     public static ArrayList<Shortcut> updatedSearchShortcuts = new ArrayList<>();
+    public static Shortcut currentShortcut = new Shortcut();
+    public static ArrayList<Action> shortcutActions = new ArrayList<>();
+    public static Action actionToAdd = new Action();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
         updatedSearchShortcuts.clear();
         for (Shortcut s : availableShortcuts) {
             updatedSearchShortcuts.add(s);
+        }
+    }
+
+    public static void updateShortcutActions(Shortcut s) {
+        MainActivity.shortcutActions.clear();
+        for (Action action : s.getShortcutActions()) {
+            shortcutActions.add(action);
         }
     }
 }

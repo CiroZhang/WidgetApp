@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.widgetapp.Action;
+import com.example.widgetapp.MainActivity;
 import com.example.widgetapp.R;
 import com.example.widgetapp.Screens.CreateShortcut;
 import com.example.widgetapp.Screens.SelectApps;
@@ -58,14 +60,8 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.AppViewHolder>
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("BEFORE");
-                openNextScreen();
-                System.out.println("AFTER");
-            }
-        });
-        holder.app_name.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                MainActivity.updateShortcutActions(shortcut);
+                MainActivity.currentShortcut = shortcut;
                 openNextScreen();
             }
         });
@@ -77,9 +73,7 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.AppViewHolder>
     }
 
     private void openNextScreen() {
-        System.out.println("INBEFORE");
         Intent open = new Intent(context, CreateShortcut.class);
         context.startActivity(open);
-        System.out.println("INAFTER");
     }
 }

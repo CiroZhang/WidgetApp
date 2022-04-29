@@ -36,8 +36,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
         private TextView shortcut_name;
         private LinearLayout wholeLayout;
 
-
-
         public ShortcutViewHolder(@NonNull View itemView) {
             super(itemView);
             shortcut_name = itemView.findViewById(R.id.shortcut_name);

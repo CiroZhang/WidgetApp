@@ -32,10 +32,14 @@ public class Shortcut {
     private String typeString;
     private Intent action;
     private ArrayList<String> info = new ArrayList<>();
+    private ArrayList<Action> shortcutActions = new ArrayList<>();
 
-    public Shortcut(String name, String typeString) {
+    public Shortcut(){}
+
+    public Shortcut(String name, String typeString, ArrayList<Action> actions) {
         this.name = name;
         this.typeString = typeString;
+        this.shortcutActions = actions;
 
 
 //        action = sendFacebook("100003863535616");
@@ -111,6 +115,9 @@ public class Shortcut {
     }
     public void setInfo(ArrayList<String> info){
         this.info = info;
+    }
+    public ArrayList<Action> getShortcutActions() {
+        return this.shortcutActions;
     }
 
     //General Android
