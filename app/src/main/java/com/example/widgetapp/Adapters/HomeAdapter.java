@@ -17,6 +17,7 @@ import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.widgetapp.Action;
 import com.example.widgetapp.R;
 import com.example.widgetapp.Shortcut;
 
@@ -25,9 +26,9 @@ import java.util.ArrayList;
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHolder>{
 
     private Context context;
-    private ArrayList<Shortcut> shortcutsList;
+    private ArrayList<Action> shortcutsList;
 
-    public HomeAdapter(@NonNull Context context, @NonNull ArrayList<Shortcut> shortcutsList) {
+    public HomeAdapter(@NonNull Context context, @NonNull ArrayList<Action> shortcutsList) {
         this.context = context;
         this.shortcutsList = shortcutsList;
     }
@@ -52,13 +53,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
 
     @Override
     public void onBindViewHolder(@NonNull HomeAdapter.ShortcutViewHolder holder, int position) {
-        Shortcut shortcut = shortcutsList.get(position);
+        Action shortcut = shortcutsList.get(position);
         holder.shortcut_name.setText(shortcut.getName());
         holder.wholeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("HI");
-                context.startActivity(shortcutsList.get(0).getAction());
+                // start shortcut activity
             }
         });
 

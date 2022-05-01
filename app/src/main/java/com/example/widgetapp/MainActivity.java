@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static ArrayList<Shortcut> shortcutsList = new ArrayList<>();
+    public static ArrayList<Action> shortcutsList = new ArrayList<>();
     public static ArrayList<Shortcut> availableShortcuts = new ArrayList<>();
     public static ArrayList<Shortcut> updatedSearchShortcuts = new ArrayList<>();
     public static Shortcut currentShortcut = new Shortcut();
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void updateShortcutActions(Shortcut s) {
-        MainActivity.shortcutActions.clear();
+        shortcutActions.clear();
         for (Action action : s.getShortcutActions()) {
             shortcutActions.add(action);
         }

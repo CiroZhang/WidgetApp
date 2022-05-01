@@ -50,6 +50,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
         private EditText phoneNumberEditText;
         private ImageButton phoneNumberDelete;
         private ImageView actionListBorder;
+        private ConstraintLayout layout;
 
         public ActionViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +63,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
             phoneNumberEditText = itemView.findViewById(R.id.phone_number_edittext);
             phoneNumberDelete = itemView.findViewById(R.id.phone_number_delete);
             actionListBorder = itemView.findViewById(R.id.shortcut_option_list_border);
+            layout = itemView.findViewById(R.id.shortcut_layout);
         }
     }
 
@@ -99,10 +101,9 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
             holder.phoneNumberEditText.setVisibility(View.GONE);
             holder.phoneNumberDelete.setVisibility(View.GONE);
             holder.actionListBorder.getLayoutParams().height = (int) (72 * (context.getResources().getDisplayMetrics().density) + 0.5f);
-
         }
 
-        holder.checkButton.setOnClickListener(new View.OnClickListener() {
+        holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!action.isChecked()) {
@@ -133,7 +134,6 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
                     holder.phoneNumberEditText.setVisibility(View.GONE);
                     holder.phoneNumberDelete.setVisibility(View.GONE);
                     holder.actionListBorder.getLayoutParams().height = (int) (72 * (context.getResources().getDisplayMetrics().density) + 0.5f);
-
                 }
 
                 int copyOfLastCheckedPosition = lastCheckedPos;
