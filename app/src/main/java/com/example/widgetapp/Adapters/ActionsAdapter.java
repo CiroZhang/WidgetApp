@@ -2,15 +2,12 @@ package com.example.widgetapp.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,9 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.widgetapp.Action;
 import com.example.widgetapp.MainActivity;
 import com.example.widgetapp.R;
-import com.example.widgetapp.Screens.CreateShortcut;
-import com.example.widgetapp.Screens.SelectApps;
-import com.example.widgetapp.Shortcut;
 
 import java.util.ArrayList;
 
@@ -70,7 +64,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
     @NonNull
     @Override
     public ActionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.item_apps_shortcut_option, parent, false);
+        View itemView = LayoutInflater.from(context).inflate(R.layout.item_shortcut_action, parent, false);
         return new ActionViewHolder(itemView);
     }
 
@@ -103,7 +97,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
             holder.actionListBorder.getLayoutParams().height = (int) (72 * (context.getResources().getDisplayMetrics().density) + 0.5f);
         }
 
-        holder.layout.setOnClickListener(new View.OnClickListener() {
+        holder.actionListBorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!action.isChecked()) {
@@ -143,6 +137,18 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
                 }
                 notifyItemChanged(copyOfLastCheckedPosition);
                 notifyItemChanged(lastCheckedPos);
+            }
+        });
+
+        holder.phoneNumberBoxBorder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.phoneNumberBoxBorder.setVisibility(View.VISIBLE);
+                holder.phoneNumberBoxLine.setVisibility(View.VISIBLE);
+                holder.phoneNumberText.setVisibility(View.VISIBLE);
+                holder.phoneNumberEditText.setVisibility(View.VISIBLE);
+                holder.phoneNumberDelete.setVisibility(View.VISIBLE);
+                holder.actionListBorder.getLayoutParams().height = (int) (152 * (context.getResources().getDisplayMetrics().density) + 0.5f);
             }
         });
 

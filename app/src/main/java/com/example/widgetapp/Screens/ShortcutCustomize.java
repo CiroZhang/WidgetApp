@@ -68,7 +68,9 @@ public class ShortcutCustomize extends AppCompatActivity {
         ImageButton iconGame = findViewById(R.id.icon_game);
         ImageButton iconMessage = findViewById(R.id.icon_message);
         ImageButton iconForum = findViewById(R.id.icon_forum);
-        Collections.addAll(iconsList,iconVideo,iconGallery,iconMusic,iconMusic,iconExplore,iconForward,iconFolder,iconShare,iconReport,iconNotes,iconGame,iconMessage,iconForum);
+        ImageButton iconFile = findViewById(R.id.icon_file);
+        ImageButton iconEmail = findViewById(R.id.icon_email);
+        Collections.addAll(iconsList,iconVideo,iconGallery,iconMusic,iconMusic,iconExplore,iconForward,iconFolder,iconShare,iconReport,iconNotes,iconGame,iconMessage,iconForum, iconFile, iconEmail);
 
         for (ImageButton color : colorsList) {
             color.setOnClickListener(new View.OnClickListener() {
