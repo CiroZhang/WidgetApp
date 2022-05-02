@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -43,8 +44,15 @@ public class ShortcutHome extends AppCompatActivity {
         });
 
         setupRecyclerView();
-        ArrayList<String> data;
+    }
 
+    private void setupRecyclerView() {
+        HomeAdapter = new HomeAdapter(this, MainActivity.shortcutsList);
+        HomeRecyclerView = findViewById(R.id.shortcut_list_view);
+        HomeRecyclerView.setAdapter(HomeAdapter);
+        HomeRecyclerView.setLayoutManager(new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false));
+
+        MainActivity.availableShortcuts.clear();
         Shortcut messenger = new Shortcut("Messenger", "Message", new ArrayList<>(Arrays.asList(new Action("Message","Open messages with a specific person"), new Action("Open App","Open the Messenger App"))));
         Shortcut whatsapp = new Shortcut("Share WhatsApp", "ShareWhatsApp", new ArrayList<>());
         Shortcut zoom = new Shortcut("Zoom","none", new ArrayList<>());
@@ -58,13 +66,6 @@ public class ShortcutHome extends AppCompatActivity {
         MainActivity.availableShortcuts.add(googleduo);
         MainActivity.availableShortcuts.add(wechat);
         MainActivity.availableShortcuts.add(twitter);
-    }
-
-    private void setupRecyclerView() {
-        HomeAdapter = new HomeAdapter(this, MainActivity.shortcutsList);
-        HomeRecyclerView = findViewById(R.id.shortcut_list_view);
-        HomeRecyclerView.setAdapter(HomeAdapter);
-        HomeRecyclerView.setLayoutManager(new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false));
         // new LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         // new GridLayoutManager(this, 4, RecyclerView.HORIZONTAL, false)
     }

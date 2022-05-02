@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/back_button" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/apps_icon"
         android:layout_width="98dp"
         android:layout_height="98dp"
@@ -38,6 +38,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/shortcut_create_icon_textview" />
+
+    <ImageView
+        android:id="@+id/custom_icon_back"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/messenger_icon"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shortcut_create_icon_textview" />
+
+    <ImageView
+        android:id="@+id/custom_icon_front"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/messenger_icon"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shortcut_create_icon_textview"
+        app:layout_constraintBottom_toBottomOf="@+id/apps_icon"/>
 
     <ImageView
         android:id="@+id/search_box_border"
