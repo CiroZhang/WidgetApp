@@ -58,23 +58,28 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
         holder.wholeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // start shortcut activity
+                PopupMenu popupMenu = new PopupMenu(context, view);
+                popupMenu.getMenuInflater().inflate(R.menu.menutest, popupMenu.getMenu());
+                popupMenu.inflate(R.menu.menutest);
+                popupMenu.show();
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        popupMenu.setForceShowIcon(true);
+                        switch (menuItem.getItemId()) {
+                            case R.id.item_test1:
+                                System.out.println("test 1 clicked");
+                                return true;
+                            case R.id.item_test2:
+                                System.out.println("test 2 clicked");
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                });
+                popupMenu.show();
             }
-        });
-
-        PopupMenu popupMenu = new PopupMenu(context, holder.wholeLayout);
-        popupMenu.getMenuInflater().inflate(R.menu.menutest, popupMenu.getMenu());
-        popupMenu.setForceShowIcon(true);
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem menu_item) {
-                switch (menu_item.getItemId()) {
-                    case R.id.icon_explore:
-                    case R.id.icon_forum:
-                        break;
-                }
-                return true;
-            }
-
         });
     }
 

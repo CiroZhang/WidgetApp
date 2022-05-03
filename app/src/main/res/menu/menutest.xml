@@ -2,19 +2,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_new"
-        android:icon="@drawable/icon_video"
-        android:title="hello">
-
-        <menu>
-
-            <item
-                android:id="@+id/action_photo"
-                android:icon="@drawable/icon_message"
-                android:title="yes"
-                app:showAsAction="always|withText" />
-
-        </menu>
-    </item>
-
+        android:id="@+id/item_test1"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:title="test1"/>
+    <item
+        android:id="@+id/item_test2"
+        android:title="test2"/>
 </menu>
