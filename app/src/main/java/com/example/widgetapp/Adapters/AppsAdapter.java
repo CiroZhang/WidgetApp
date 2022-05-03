@@ -57,6 +57,7 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.AppViewHolder>
     public void onBindViewHolder(@NonNull AppsAdapter.AppViewHolder holder, int position) {
         Shortcut shortcut = availableShortcuts.get(position);
         holder.app_name.setText(shortcut.getName());
+        holder.app_icon.setBackground(shortcut.getLogo().getDrawable());
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

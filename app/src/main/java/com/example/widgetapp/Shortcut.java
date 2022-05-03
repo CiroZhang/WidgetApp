@@ -2,15 +2,18 @@ package com.example.widgetapp;
 
 import android.app.Activity;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
@@ -33,14 +36,16 @@ public class Shortcut {
     private Intent action;
     private ArrayList<String> info = new ArrayList<>();
     private ArrayList<Action> shortcutActions = new ArrayList<>();
+    private ImageView logo;
 
     public Shortcut(){}
 
-    public Shortcut(String name, String typeString, ArrayList<Action> actions) {
+    public Shortcut(String name, String typeString, ArrayList<Action> actions, Drawable logo, Context context) {
         this.name = name;
         this.typeString = typeString;
         this.shortcutActions = actions;
-
+        this.logo = new ImageView(context);
+        this.logo.setBackground(logo);
 
 //        action = sendFacebook("100003863535616");
 //        action = email(new String[]{"oscarboom214@gmail.com"},"hello","hello ocsar");
@@ -129,6 +134,8 @@ public class Shortcut {
     public ArrayList<Action> getShortcutActions() {
         return this.shortcutActions;
     }
+    public ImageView getLogo() { return logo; };
+    public void setLogo(ImageView logo) { this.logo = logo; };
 
     //General Android
     public Intent email(String[] addresses, String subject, String text) {

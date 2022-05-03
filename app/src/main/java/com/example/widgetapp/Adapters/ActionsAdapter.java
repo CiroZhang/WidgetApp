@@ -2,6 +2,8 @@ package com.example.widgetapp.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,6 +76,12 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
         holder.actionName.setText(action.getName());
         holder.actionDescription.setText(action.getDescription());
         holder.phoneNumberEditText.getText().clear();
+        holder.phoneNumberBoxBorder.setVisibility(View.GONE);
+        holder.phoneNumberBoxLine.setVisibility(View.GONE);
+        holder.phoneNumberText.setVisibility(View.GONE);
+        holder.phoneNumberEditText.setVisibility(View.GONE);
+        holder.phoneNumberDelete.setVisibility(View.GONE);
+        holder.actionListBorder.getLayoutParams().height = (int) (72 * (context.getResources().getDisplayMetrics().density) + 0.5f);
 
         if (action.isChecked()) {
             holder.checkButton.setBackgroundResource(R.drawable.radio_button_checked);
@@ -97,7 +105,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
             holder.actionListBorder.getLayoutParams().height = (int) (72 * (context.getResources().getDisplayMetrics().density) + 0.5f);
         }
 
-        holder.actionListBorder.setOnClickListener(new View.OnClickListener() {
+        holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!action.isChecked()) {
@@ -114,6 +122,8 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
                         holder.phoneNumberEditText.setVisibility(View.VISIBLE);
                         holder.phoneNumberDelete.setVisibility(View.VISIBLE);
                         holder.actionListBorder.getLayoutParams().height = (int) (152 * (context.getResources().getDisplayMetrics().density) + 0.5f);
+                        nextButton.setClickable(false);
+                        nextButton.setBackgroundResource(R.drawable.next_button_unchecked);
                     }
                 }
                 else {
@@ -140,22 +150,34 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
             }
         });
 
-        holder.phoneNumberBoxBorder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                holder.phoneNumberBoxBorder.setVisibility(View.VISIBLE);
-                holder.phoneNumberBoxLine.setVisibility(View.VISIBLE);
-                holder.phoneNumberText.setVisibility(View.VISIBLE);
-                holder.phoneNumberEditText.setVisibility(View.VISIBLE);
-                holder.phoneNumberDelete.setVisibility(View.VISIBLE);
-                holder.actionListBorder.getLayoutParams().height = (int) (152 * (context.getResources().getDisplayMetrics().density) + 0.5f);
-            }
-        });
-
         holder.phoneNumberDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 holder.phoneNumberEditText.getText().clear();
+            }
+        });
+
+        holder.phoneNumberEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!editable.toString().isEmpty()) {
+                    nextButton.setClickable(true);
+                    nextButton.setBackgroundResource(R.drawable.next_button_checked);
+                }
+                else {
+                    nextButton.setClickable(false);
+                    nextButton.setBackgroundResource(R.drawable.next_button_unchecked);
+                }
             }
         });
     }

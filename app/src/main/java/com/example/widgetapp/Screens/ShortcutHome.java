@@ -5,6 +5,7 @@ import static java.security.AccessController.getContext;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuPopupHelper;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -53,12 +54,12 @@ public class ShortcutHome extends AppCompatActivity {
         HomeRecyclerView.setLayoutManager(new GridLayoutManager(this, 4, RecyclerView.VERTICAL, false));
 
         MainActivity.availableShortcuts.clear();
-        Shortcut messenger = new Shortcut("Messenger", "Message", new ArrayList<>(Arrays.asList(new Action("Message","Open messages with a specific person"), new Action("Open App","Open the Messenger App"))));
-        Shortcut whatsapp = new Shortcut("Share WhatsApp", "ShareWhatsApp", new ArrayList<>());
-        Shortcut zoom = new Shortcut("Zoom","none", new ArrayList<>());
-        Shortcut googleduo = new Shortcut("GoogleMap", "SearchGoogleMaps", new ArrayList<>());
-        Shortcut wechat = new Shortcut("WeChat","none", new ArrayList<>());
-        Shortcut twitter = new Shortcut("Share Twitter", "ShareTwitter", new ArrayList<>());
+        Shortcut messenger = new Shortcut("Messenger", "Message", new ArrayList<>(Arrays.asList(new Action("Message","Open messages with a specific person",ContextCompat.getDrawable(this,R.drawable.messenger_icon),this), new Action("Open App","Open the Messenger App",ContextCompat.getDrawable(this,R.drawable.messenger_icon),this))), ContextCompat.getDrawable(this,R.drawable.messenger_icon), this);
+        Shortcut whatsapp = new Shortcut("Share WhatsApp", "ShareWhatsApp", new ArrayList<>(), ContextCompat.getDrawable(this,R.drawable.whatsapp_icon), this);
+        Shortcut zoom = new Shortcut("Zoom","none", new ArrayList<>(), ContextCompat.getDrawable(this,R.drawable.zoom_icon), this);
+        Shortcut googleduo = new Shortcut("GoogleMap", "SearchGoogleMaps", new ArrayList<>(), ContextCompat.getDrawable(this,R.drawable.youtube_icon), this);
+        Shortcut wechat = new Shortcut("WeChat","none", new ArrayList<>(),ContextCompat.getDrawable(this,R.drawable.wechat_icon), this);
+        Shortcut twitter = new Shortcut("Share Twitter", "ShareTwitter", new ArrayList<>(), ContextCompat.getDrawable(this,R.drawable.youtube_icon), this);
 
         MainActivity.availableShortcuts.add(messenger);
         MainActivity.availableShortcuts.add(whatsapp);

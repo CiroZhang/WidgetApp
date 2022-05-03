@@ -72,29 +72,259 @@ public class ShortcutCustomize extends AppCompatActivity {
         ImageButton iconEmail = findViewById(R.id.icon_email);
         Collections.addAll(iconsList,iconVideo,iconGallery,iconMusic,iconMusic,iconExplore,iconForward,iconFolder,iconShare,iconReport,iconNotes,iconGame,iconMessage,iconForum, iconFile, iconEmail);
 
-        for (ImageButton color : colorsList) {
-            color.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    appIcon.setVisibility(View.INVISIBLE);
-                    customIconBack.setVisibility(View.VISIBLE);
-                    customIconBack.setBackground(color.getBackground());
-                    allCriteriasMet(nextButton);
-                }
-            });
-        }
+        colorPink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_pink);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorRed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_red);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorOrange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_orange);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorLightOrange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_light_orange);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorYellow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_yellow);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorLime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_lime);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorGreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_green);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorDarkGreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_dark_green);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorTeal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_teal);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorLightBlue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_light_blue);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorBlue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_blue);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorDarkBlue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_dark_blue);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorMagenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_magenta);
+                allCriteriasMet(nextButton);
+            }
+        });
+        colorPurple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconBack.setVisibility(View.VISIBLE);
+                customIconBack.setBackgroundResource(R.drawable.color_background_purple);
+                allCriteriasMet(nextButton);
+            }
+        });
 
-        for (ImageButton icon : iconsList) {
-            icon.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    appIcon.setVisibility(View.INVISIBLE);
-                    customIconFront.setVisibility(View.VISIBLE);
-                    customIconFront.setBackground(icon.getBackground());
-                    allCriteriasMet(nextButton);
-                }
-            });
-        }
+        iconVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_video);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_gallery);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_music);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconExplore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_explore);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconForward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_forward);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconFolder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_folder);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_share);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_report);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_notes);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_game);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_message);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconForum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_forum);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_file);
+                allCriteriasMet(nextButton);
+            }
+        });
+        iconEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appIcon.setVisibility(View.INVISIBLE);
+                customIconFront.setVisibility(View.VISIBLE);
+                customIconFront.setBackgroundResource(R.drawable.icon_background_email);
+                allCriteriasMet(nextButton);
+            }
+        });
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override

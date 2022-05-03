@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -35,11 +36,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
 
     public class ShortcutViewHolder extends RecyclerView.ViewHolder {
         private TextView shortcut_name;
+        private ImageView shortcut_icon;
         private LinearLayout wholeLayout;
 
         public ShortcutViewHolder(@NonNull View itemView) {
             super(itemView);
             shortcut_name = itemView.findViewById(R.id.shortcut_name);
+            shortcut_icon = itemView.findViewById(R.id.shortcut_icon);
             wholeLayout = itemView.findViewById(R.id.shortcut_full_icon);
         }
     }
@@ -55,6 +58,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
     public void onBindViewHolder(@NonNull HomeAdapter.ShortcutViewHolder holder, int position) {
         Action shortcut = shortcutsList.get(position);
         holder.shortcut_name.setText(shortcut.getName());
+        holder.shortcut_icon.setBackground(shortcut.getLogo().getDrawable());
         holder.wholeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
