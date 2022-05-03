@@ -6,7 +6,9 @@
         <package android:name="com.facebook.katana" />
         <package android:name="com.twitter.android"/>
         <package android:name="com.whatsapp"/>
+        <package android:name="com.google"/>
         <package android:name="com.example.billsplit_app" />
+<!--        <package android:name="us.zoom/videomeetings"/>-->
 
 
     </queries>

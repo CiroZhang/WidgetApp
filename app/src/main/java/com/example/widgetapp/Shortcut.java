@@ -22,9 +22,9 @@ import java.util.Vector;
 public class Shortcut {
     public enum Type{
         Email, Message,Call,OpenWeb,OpenApp,
-        SendFacebook,ShareFacebook,
-        ShareTwitter,
-        ShareWhatsapp,
+        OpenFacebook, SearchFacebook,SendFacebook,ShareFacebook,
+        OpenTwitter, SearchTwitter, ShareTwitter,
+        OpenWhatsapp, ShareWhatsapp,
         SearchGoogleMap;
     }
 
@@ -55,37 +55,47 @@ public class Shortcut {
         }
         else {
             switch (type) {
-
                 case Email:
                     action = email(info.get(0).split(","), info.get(1), info.get(2));
                     break;
-
                 case Message:
                     action = message(info.get(0));
                     break;
-
                 case Call:
                     action = call(info.get(0));
                     break;
-
                 case OpenWeb:
                     action = openWebsite(info.get(0));
                     break;
-
                 case OpenApp:
                     action = openApp(view, info.get(0));
                     break;
 
+                case OpenFacebook:
+                    action = openFacebook(view);
+                    break;
+                case SearchFacebook:
+                    action = searchFacebook(info.get(0));
+                    break;
                 case SendFacebook:
                     action = sendFacebook(info.get(0));
                     break;
-
                 case ShareFacebook:
                     action = shareFacebook(view, info.get(0));
                     break;
 
+                case OpenTwitter:
+                    action = openTwitter(view);
+
+                case SearchTwitter:
+                    action = searchTwitter(info.get(0));
+
                 case ShareTwitter:
                     action = shareTwitter(view, info.get(0), "", info.get(1), info.get(2));
+                    break;
+
+                case OpenWhatsapp:
+                    action = openWhatsapp(view);
                     break;
 
                 case ShareWhatsapp:
@@ -153,6 +163,9 @@ public class Shortcut {
     }
 
     //Facebook
+    public Intent openFacebook(View view){
+        return openApp(view,"com.facebook.katana");
+    }
     public Intent searchFacebook(String search){
         return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/search/top?q="+search));
     }
@@ -188,6 +201,9 @@ public class Shortcut {
     }
 
     //Twitter
+    public Intent openTwitter(View view){
+        return openApp(view,"com.twitter.android");
+    }
     public Intent searchTwitter(String search){
         return new Intent(Intent.ACTION_VIEW,Uri.parse("https://twitter.com/search?q="+search));
     }
@@ -218,6 +234,9 @@ public class Shortcut {
     }
 
     //Whatsapp
+    public Intent openWhatsapp(View view){
+        return openApp(view,"com.whatsapp");
+    }
     public Intent shareWhatsapp(View view, String text, String url) {
         PackageManager pm = view.getContext().getPackageManager();
         try {
@@ -242,7 +261,20 @@ public class Shortcut {
     }
 
     //Zoom
+    public Intent openZoom(View view){
+        return openApp(view,"us.zoom.videomeetings");
+    }
+    public Intent scheduleZoom(){
+        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://us05web.zoom.us/meeting/schedule"));
+    }
+    public Intent joinZoom(String number){
+        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://zoom.us/j/"+number));
+    }
 
+    //Slice
+    public Intent openSlice(View view){
+        return openApp(view,"com.example.billsplit_app");
+    }
 
     //Google
     public Intent searchGoogle(String search){
@@ -258,8 +290,9 @@ public class Shortcut {
         return new Intent(Intent.ACTION_VIEW,Uri.parse(" https://mail.google.com/mail/u/0/"));
     };
 
-
     //Wechat
+
+    
 
 
 
