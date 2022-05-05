@@ -4,7 +4,7 @@
     <item
         android:id="@+id/item_test1"
         android:icon="@drawable/ic_baseline_edit_24"
-        android:title="test1"/>
+        android:title="test1" />
     <item
         android:id="@+id/item_test2"
         android:title="test2"/>

@@ -64,12 +64,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
             public void onClick(View view) {
                 PopupMenu popupMenu = new PopupMenu(context, view);
                 popupMenu.getMenuInflater().inflate(R.menu.menutest, popupMenu.getMenu());
-                popupMenu.inflate(R.menu.menutest);
+                popupMenu.setForceShowIcon(true);
                 popupMenu.show();
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
-                        popupMenu.setForceShowIcon(true);
                         switch (menuItem.getItemId()) {
                             case R.id.item_test1:
                                 System.out.println("test 1 clicked");
@@ -82,7 +81,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
                         }
                     }
                 });
-                popupMenu.show();
             }
         });
     }
