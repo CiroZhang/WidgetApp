@@ -185,6 +185,8 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
             @Override
             public void afterTextChanged(Editable editable) {
                 if (!editable.toString().isEmpty()) {
+                    MainActivity.currentInfo.clear();
+                    MainActivity.currentInfo.add(editable.toString());
                     nextButton.setClickable(true);
                     nextButton.setBackgroundResource(R.drawable.next_button_checked);
                 }

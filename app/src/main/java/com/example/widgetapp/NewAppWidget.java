@@ -34,29 +34,29 @@ public class NewAppWidget extends AppWidgetProvider {
         // There may be multiple widgets active, so update all of them
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
-            ArrayList<String> data = new ArrayList<>();
-            data.add("Richmond Centre");
-            Shortcut shortcut = new Shortcut("hello", "SearchGoogleMaps");
-            shortcut.setInfo(data);
-            Intent intent = shortcut.run(context);
-            System.out.println("4");
-
-            // Create an Intent to launch ExampleActivity
-//            Intent intent = new Intent(context, ShortcutHome.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(
-                    /* context = */ context,
-                    /* requestCode = */ 0,
-                    /* intent = */ intent,
-                    /* flags = */ PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
-            );
-
-            // Get the layout for the widget and attach an on-click listener
-            // to the button.
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
-            views.setOnClickPendingIntent(R.id.appwidget_image, pendingIntent);
-
-            // Tell the AppWidgetManager to perform an update on the current app widget.
-            appWidgetManager.updateAppWidget(appWidgetId, views);
+//            ArrayList<String> data = new ArrayList<>();
+//            data.add("Richmond Centre");
+//            Shortcut shortcut = new Shortcut("hello", "SearchGoogleMaps");
+//            shortcut.setInfo(data);
+//            Intent intent = shortcut.run(context);
+//            System.out.println("4");
+//
+//            // Create an Intent to launch ExampleActivity
+////            Intent intent = new Intent(context, ShortcutHome.class);
+//            PendingIntent pendingIntent = PendingIntent.getActivity(
+//                    /* context = */ context,
+//                    /* requestCode = */ 0,
+//                    /* intent = */ intent,
+//                    /* flags = */ PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+//            );
+//
+//            // Get the layout for the widget and attach an on-click listener
+//            // to the button.
+//            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
+//            views.setOnClickPendingIntent(R.id.appwidget_image, pendingIntent);
+//
+//            // Tell the AppWidgetManager to perform an update on the current app widget.
+//            appWidgetManager.updateAppWidget(appWidgetId, views);
         }
     }
 

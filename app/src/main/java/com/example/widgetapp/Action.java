@@ -6,19 +6,22 @@ import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 public class Action {
 
     private String name;
     private String description;
-    private Intent action;
+    private Shortcut task;
     private boolean checked = false;
     private Drawable logo;
 
     public Action() {}
-    public Action(String name, String description, Drawable logo) {
+    public Action(String name, String description, Drawable logo, Shortcut shortcut) {
         this.name = name;
         this.description = description;
         this.logo = logo;
+        this.task = shortcut;
     }
 
     public String getName() { return this.name; };
@@ -29,4 +32,10 @@ public class Action {
     public void setChecked(boolean status) { this.checked = status; }
     public Drawable getLogo() { return logo; };
     public void setLogo(Drawable logo) { this.logo = logo; };
+    public void setInfo(ArrayList<String> info) { this.task.setInfo(info); }
+
+    public void runTask(Context context) {
+        System.out.println(this.task.getTypeString());
+        this.task.run(context);
+    }
 }

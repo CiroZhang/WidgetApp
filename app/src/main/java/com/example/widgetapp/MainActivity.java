@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     public static Shortcut currentShortcut = new Shortcut();
     public static ArrayList<Action> shortcutActions = new ArrayList<>();
     public static Action actionToAdd = new Action();
+    public static ArrayList<String> currentInfo = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

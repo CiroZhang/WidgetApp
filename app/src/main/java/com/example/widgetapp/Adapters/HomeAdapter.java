@@ -62,6 +62,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
         holder.wholeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                shortcut.runTask(context);
+
                 PopupMenu popupMenu = new PopupMenu(context, view);
                 popupMenu.getMenuInflater().inflate(R.menu.menutest, popupMenu.getMenu());
                 popupMenu.setForceShowIcon(true);

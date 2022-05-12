@@ -41,6 +41,7 @@ public class CreateShortcut extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MainActivity.actionToAdd.setInfo(MainActivity.currentInfo);
                 openNextScreen();
             }
         });
