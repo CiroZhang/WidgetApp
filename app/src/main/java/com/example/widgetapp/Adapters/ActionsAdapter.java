@@ -87,7 +87,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
 
         if (action.isChecked()) {
             holder.checkButton.setBackgroundResource(R.drawable.radio_button_checked);
-            if (action.getName().equals("Message")) {
+            if (action.getName().equals("Message...") || action.getName().equals("Call...") || action.getName().equals("Message...") || action.getName().equals("Share to WhatsApp")) {
                 holder.phoneNumberBoxBorder.setVisibility(View.VISIBLE);
                 holder.phoneNumberBoxLine.setVisibility(View.VISIBLE);
                 holder.phoneNumberText.setVisibility(View.VISIBLE);
@@ -117,7 +117,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
                     nextButton.setClickable(true);
                     nextButton.setBackgroundResource(R.drawable.next_button_checked);
 
-                    if (action.getName().equals("Message")) {
+                    if (action.getName().equals("Message...") || action.getName().equals("Call...") || action.getName().equals("Message...") || action.getName().equals("Share to WhatsApp")) {
                         holder.phoneNumberBoxBorder.setVisibility(View.VISIBLE);
                         holder.phoneNumberBoxLine.setVisibility(View.VISIBLE);
                         holder.phoneNumberText.setVisibility(View.VISIBLE);

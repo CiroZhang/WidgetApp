@@ -18,6 +18,8 @@ import com.example.widgetapp.Adapters.HomeAdapter;
 import com.example.widgetapp.MainActivity;
 import com.example.widgetapp.R;
 
+import java.util.ArrayList;
+
 public class CreateShortcut extends AppCompatActivity {
 
     ActionsAdapter ActionsAdapter;
@@ -41,7 +43,11 @@ public class CreateShortcut extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.actionToAdd.setInfo(MainActivity.currentInfo);
+                if (MainActivity.currentInfo.isEmpty()) {
+                    MainActivity.currentInfo.add("none");
+                }
+                MainActivity.actionToAdd.setInfo((ArrayList<String>)MainActivity.currentInfo.clone());
+                MainActivity.currentInfo.clear();
                 openNextScreen();
             }
         });

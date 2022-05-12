@@ -24,11 +24,12 @@ import java.util.Vector;
 
 public class Shortcut {
     public enum Type{
-        Email, Message,Call,OpenWeb,OpenApp,
-        OpenFacebook, SearchFacebook,SendFacebook,ShareFacebook,
+        Email, Message, Call, OpenWeb, OpenApp,
+        OpenFacebook, SearchFacebook, SendFacebook, ShareFacebook,
         OpenTwitter, SearchTwitter, ShareTwitter,
         OpenWhatsapp, ShareWhatsapp,
-        SearchGoogleMaps;
+        SearchGoogleMaps,
+        JoinZoom, ScheduleZoom, OpenZoom;
     }
 
     private String name = "Shortcut Name";
@@ -73,56 +74,74 @@ public class Shortcut {
                 case Email:
                     action = email(info.get(0).split(","), info.get(1), info.get(2));
                     break;
+
                 case Message:
                     action = message(info.get(0));
                     break;
+
                 case Call:
                     action = call(info.get(0));
                     break;
+
                 case OpenWeb:
                     action = openWebsite(info.get(0));
                     break;
-//                case OpenApp:
-//                    action = openApp(context, info.get(0));
-//                    break;
-//
-//                case OpenFacebook:
-//                    action = openFacebook(context);
-//                    break;
+
+                case OpenApp:
+                    action = openApp(context, info.get(0));
+                    break;
+
+                case OpenFacebook:
+                    action = openFacebook(context);
+                    break;
+
                 case SearchFacebook:
                     action = searchFacebook(info.get(0));
                     break;
+
                 case SendFacebook:
                     action = sendFacebook(info.get(0));
                     break;
-//                case ShareFacebook:
-//                    action = shareFacebook(context, info.get(0));
-//                    break;
 
-//                case OpenTwitter:
-//                    action = openTwitter(view);
-//                    break;
+                case ShareFacebook:
+                    action = shareFacebook(context, info.get(0));
+                    break;
+
+                case OpenTwitter:
+                    action = openTwitter(context);
+                    break;
 
                 case SearchTwitter:
                     action = searchTwitter(info.get(0));
                     break;
 
-//                case ShareTwitter:
-//                    action = shareTwitter(context, info.get(0), "", info.get(1), info.get(2));
-//                    break;
+                case ShareTwitter:
+                    action = shareTwitter(context, info.get(0), "", info.get(1), info.get(2));
+                    break;
 
-//                case OpenWhatsapp:
-//                    action = openWhatsapp(context);
-//                    break;
-//
-//                case ShareWhatsapp:
-//                    action = shareWhatsapp(context, info.get(0), info.get(1));
-//                    break;
+                case OpenWhatsapp:
+                    action = openWhatsapp(context);
+                    break;
+
+                case ShareWhatsapp:
+                    action = shareWhatsapp(context, info.get(0), info.get(1));
+                    break;
 
                 case SearchGoogleMaps:
                     action = searchGoogleMaps(info.get(0));
                     break;
 
+                case JoinZoom:
+                    action = joinZoom(info.get(0));
+                    break;
+
+                case ScheduleZoom:
+                    action = scheduleZoom();
+                    break;
+
+                case OpenZoom:
+                    action = openZoom(context);
+                    break;
 
                 default:
                     break;
@@ -150,6 +169,7 @@ public class Shortcut {
     }
     public Drawable getLogo() { return this.logo; };
     public String getTypeString() { return this.typeString; }
+    public ArrayList<String> getInfo() { return this.info; }
 //    public void setLogo(ImageView logo) { this.logo = logo; };
 
     //General Android
@@ -163,7 +183,6 @@ public class Shortcut {
 
     }
     public Intent message(String number){
-        System.out.println("GOTHERE");
         return new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null));
     }
     public Intent call(String number){
@@ -304,11 +323,8 @@ public class Shortcut {
         return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/search?q="+search));
     }
     public Intent searchGoogleMaps(String search){
-        System.out.println("1");
         Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/maps/search/"+search));
-        System.out.println("2");
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        System.out.println("3");
         return intent;
 //        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/maps/search/"+search));
     }

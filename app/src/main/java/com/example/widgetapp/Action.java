@@ -32,10 +32,11 @@ public class Action {
     public void setChecked(boolean status) { this.checked = status; }
     public Drawable getLogo() { return logo; };
     public void setLogo(Drawable logo) { this.logo = logo; };
+    public ArrayList<String> getInfo() { return this.task.getInfo(); }
     public void setInfo(ArrayList<String> info) { this.task.setInfo(info); }
+    public Shortcut getTask() { return this.task; }
 
     public void runTask(Context context) {
-        System.out.println(this.task.getTypeString());
         this.task.run(context);
     }
 }
