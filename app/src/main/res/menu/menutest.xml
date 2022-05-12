@@ -2,10 +2,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/item_test1"
-        android:icon="@drawable/ic_baseline_edit_24"
-        android:title="test1" />
+        android:id="@+id/item_1"
+        android:icon="@drawable/edit_icon"
+        android:title="Edit" />
     <item
-        android:id="@+id/item_test2"
-        android:title="test2"/>
+        android:id="@+id/item_2"
+        android:icon="@drawable/profile_icon"
+        android:title="Edit Icon"/>
+    <item
+        android:id="@+id/item_3"
+        android:icon="@drawable/delete_icon"
+        android:title="Delete" />
 </menu>

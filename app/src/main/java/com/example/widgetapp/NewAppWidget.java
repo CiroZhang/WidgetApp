@@ -23,7 +23,7 @@ public class NewAppWidget extends AppWidgetProvider {
         CharSequence widgetText = context.getString(R.string.appwidget_text);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
-        views.setTextViewText(R.id.appwidget_text, widgetText);
+        views.setTextViewText(R.id.appwidget_image, widgetText);
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
@@ -53,7 +53,7 @@ public class NewAppWidget extends AppWidgetProvider {
             // Get the layout for the widget and attach an on-click listener
             // to the button.
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
-            views.setOnClickPendingIntent(R.id.appwidget_text, pendingIntent);
+            views.setOnClickPendingIntent(R.id.appwidget_image, pendingIntent);
 
             // Tell the AppWidgetManager to perform an update on the current app widget.
             appWidgetManager.updateAppWidget(appWidgetId, views);

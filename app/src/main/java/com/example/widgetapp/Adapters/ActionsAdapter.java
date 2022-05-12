@@ -142,6 +142,18 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
                     holder.actionListBorder.getLayoutParams().height = (int) (72 * (context.getResources().getDisplayMetrics().density) + 0.5f);
                 }
 
+                holder.phoneNumberBoxBorder.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        holder.phoneNumberBoxBorder.setVisibility(View.VISIBLE);
+                        holder.phoneNumberBoxLine.setVisibility(View.VISIBLE);
+                        holder.phoneNumberText.setVisibility(View.VISIBLE);
+                        holder.phoneNumberEditText.setVisibility(View.VISIBLE);
+                        holder.phoneNumberDelete.setVisibility(View.VISIBLE);
+                        holder.actionListBorder.getLayoutParams().height = (int) (152 * (context.getResources().getDisplayMetrics().density) + 0.5f);
+                    }
+                });
+
                 int copyOfLastCheckedPosition = lastCheckedPos;
                 lastCheckedPos = position;
                 if (copyOfLastCheckedPosition != -1 && copyOfLastCheckedPosition != lastCheckedPos) {

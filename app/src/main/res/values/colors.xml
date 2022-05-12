@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#FFC6C6C6</color>
     <color name="grey2">#FF8E8E8E</color>
+    <color name="popup">#edeef9</color>
 
     <color name="colorPrimary">#0F9D58</color>
     <color name="colorPrimaryDark">#16E37F</color>

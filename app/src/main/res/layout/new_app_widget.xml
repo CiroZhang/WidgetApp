@@ -5,7 +5,7 @@
     android:theme="@style/Theme.WidgetApp.AppWidgetContainer">
 
     <Button
-        android:id="@+id/appwidget_text"
+        android:id="@+id/appwidget_image"
         style="@style/Widget.WidgetApp.AppWidget.InnerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

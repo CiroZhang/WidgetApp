@@ -29,7 +29,7 @@
         <item name="appWidgetPadding">16dp</item>
     </style>
     <style name="PopupMenu" parent="ThemeOverlay.AppCompat.Dark">
-        <item name="android:popupBackground">@color/purple_500</item>
+        <item name="android:popupBackground">@color/popup</item>
         <item name="android:popupMenuStyle">@style/PopupMenu</item>
     </style>
 </resources>

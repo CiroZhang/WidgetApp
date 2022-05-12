@@ -70,10 +70,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         switch (menuItem.getItemId()) {
-                            case R.id.item_test1:
+                            case R.id.item_1:
                                 System.out.println("test 1 clicked");
                                 return true;
-                            case R.id.item_test2:
+                            case R.id.item_2:
                                 System.out.println("test 2 clicked");
                                 return true;
                             default:
