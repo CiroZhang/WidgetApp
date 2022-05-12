@@ -101,6 +101,7 @@
         android:background="@null"
         android:maxEms="10"
         android:visibility="visible"
+        android:inputType="numberPassword"
         app:layout_constraintTop_toTopOf="@id/phone_number_box_border"
         app:layout_constraintStart_toStartOf="@id/phone_number_box_border"/>
 

@@ -34,6 +34,8 @@ public class CreateShortcut extends AppCompatActivity {
         TextView appName = findViewById(R.id.apps_name);
         ImageButton nextButton = findViewById(R.id.add_shortcut_button);
 
+        appIcon.setBackground(MainActivity.currentShortcut.getLogo());
+
         appName.setText(MainActivity.currentShortcut.getName());
 
         nextButton.setOnClickListener(new View.OnClickListener() {

@@ -28,7 +28,7 @@ public class Shortcut {
         OpenFacebook, SearchFacebook,SendFacebook,ShareFacebook,
         OpenTwitter, SearchTwitter, ShareTwitter,
         OpenWhatsapp, ShareWhatsapp,
-        SearchGoogleMap;
+        SearchGoogleMaps;
     }
 
     private String name = "Shortcut Name";
@@ -36,16 +36,18 @@ public class Shortcut {
     private Intent action;
     private ArrayList<String> info = new ArrayList<>();
     private ArrayList<Action> shortcutActions = new ArrayList<>();
-    private ImageView logo;
+    private Drawable logo;
 
     public Shortcut(){}
+    public Shortcut(String name, String typeString){this.name = name;
+        this.typeString = typeString;}
 
-    public Shortcut(String name, String typeString, ArrayList<Action> actions, Drawable logo, Context context) {
+    public Shortcut(String name, String typeString, ArrayList<Action> actions, Drawable logo) {
         this.name = name;
         this.typeString = typeString;
         this.shortcutActions = actions;
-        this.logo = new ImageView(context);
-        this.logo.setBackground(logo);
+        this.logo = logo;
+//        this.logo.setBackground(logo);
 
 //        action = sendFacebook("100003863535616");
 //        action = email(new String[]{"oscarboom214@gmail.com"},"hello","hello ocsar");
@@ -53,7 +55,7 @@ public class Shortcut {
 
     }
 
-    public void run(View view){
+    public Intent run(Context context){
         Type type = Type.valueOf(typeString);
         if (info.isEmpty()){
             System.out.println("Info not set");
@@ -72,42 +74,44 @@ public class Shortcut {
                 case OpenWeb:
                     action = openWebsite(info.get(0));
                     break;
-                case OpenApp:
-                    action = openApp(view, info.get(0));
-                    break;
-
-                case OpenFacebook:
-                    action = openFacebook(view);
-                    break;
+//                case OpenApp:
+//                    action = openApp(view, info.get(0));
+//                    break;
+//
+//                case OpenFacebook:
+//                    action = openFacebook(view);
+//                    break;
                 case SearchFacebook:
                     action = searchFacebook(info.get(0));
                     break;
                 case SendFacebook:
                     action = sendFacebook(info.get(0));
                     break;
-                case ShareFacebook:
-                    action = shareFacebook(view, info.get(0));
-                    break;
+//                case ShareFacebook:
+//                    action = shareFacebook(view, info.get(0));
+//                    break;
 
-                case OpenTwitter:
-                    action = openTwitter(view);
+//                case OpenTwitter:
+//                    action = openTwitter(view);
+//                    break;
 
                 case SearchTwitter:
                     action = searchTwitter(info.get(0));
-
-                case ShareTwitter:
-                    action = shareTwitter(view, info.get(0), "", info.get(1), info.get(2));
                     break;
 
-                case OpenWhatsapp:
-                    action = openWhatsapp(view);
-                    break;
+//                case ShareTwitter:
+//                    action = shareTwitter(view, info.get(0), "", info.get(1), info.get(2));
+//                    break;
 
-                case ShareWhatsapp:
-                    action = shareWhatsapp(view, info.get(0), info.get(1));
-                    break;
+//                case OpenWhatsapp:
+//                    action = openWhatsapp(view);
+//                    break;
+//
+//                case ShareWhatsapp:
+//                    action = shareWhatsapp(view, info.get(0), info.get(1));
+//                    break;
 
-                case SearchGoogleMap:
+                case SearchGoogleMaps:
                     action = searchGoogleMaps(info.get(0));
                     break;
 
@@ -115,8 +119,10 @@ public class Shortcut {
                 default:
                     break;
             }
-            view.getContext().startActivity(action);
+            return action;
+//            context.startActivity(action);
         }
+        return null;
     }
 
     public String getName() {
@@ -134,8 +140,8 @@ public class Shortcut {
     public ArrayList<Action> getShortcutActions() {
         return this.shortcutActions;
     }
-    public ImageView getLogo() { return logo; };
-    public void setLogo(ImageView logo) { this.logo = logo; };
+    public Drawable getLogo() { return logo; };
+//    public void setLogo(ImageView logo) { this.logo = logo; };
 
     //General Android
     public Intent email(String[] addresses, String subject, String text) {
@@ -288,7 +294,13 @@ public class Shortcut {
         return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/search?q="+search));
     }
     public Intent searchGoogleMaps(String search){
-        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/maps/search/"+search));
+        System.out.println("1");
+        Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/maps/search/"+search));
+        System.out.println("2");
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        System.out.println("3");
+        return intent;
+//        return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/maps/search/"+search));
     }
     public Intent searchYoutube(String search){
         return new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.youtube.com/results?search_query="+search));

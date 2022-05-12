@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,6 +81,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
         holder.phoneNumberBoxLine.setVisibility(View.GONE);
         holder.phoneNumberText.setVisibility(View.GONE);
         holder.phoneNumberEditText.setVisibility(View.GONE);
+        holder.phoneNumberEditText.setTransformationMethod(null);
         holder.phoneNumberDelete.setVisibility(View.GONE);
         holder.actionListBorder.getLayoutParams().height = (int) (72 * (context.getResources().getDisplayMetrics().density) + 0.5f);
 

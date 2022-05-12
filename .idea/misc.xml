@@ -26,12 +26,15 @@
         <entry key="..\:/Users/Oscar/AndroidStudioProjects/shortcut_app/app/src/main/res/layout/item_apps.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Oscar/AndroidStudioProjects/shortcut_app/app/src/main/res/layout/item_apps_shortcut_option.xml" value="0.67" />
         <entry key="..\:/Users/Oscar/AndroidStudioProjects/shortcut_app/app/src/main/res/layout/item_shortcut.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Oscar/AndroidStudioProjects/shortcut_app/app/src/main/res/layout/item_shortcut_action.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Oscar/AndroidStudioProjects/shortcut_app/app/src/main/res/layout/menu.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/Oscar/AndroidStudioProjects/shortcut_app/app/src/main/res/layout/new_app_widget.xml" value="0.21770833333333334" />
         <entry key="..\:/Users/Oscar/AndroidStudioProjects/shortcut_app/app/src/main/res/layout/shortcut_customize.xml" value="0.5" />
         <entry key="..\:/Users/Oscar/AndroidStudioProjects/shortcut_app/app/src/main/res/layout/shortcut_home.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15_PREVIEW" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

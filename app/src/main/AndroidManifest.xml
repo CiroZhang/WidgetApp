@@ -4,12 +4,11 @@
 
     <queries>
         <package android:name="com.facebook.katana" />
-        <package android:name="com.twitter.android"/>
-        <package android:name="com.whatsapp"/>
-        <package android:name="com.google"/>
+        <package android:name="com.twitter.android" />
+        <package android:name="com.whatsapp" />
+        <package android:name="com.google" />
         <package android:name="com.example.billsplit_app" />
-<!--        <package android:name="us.zoom/videomeetings"/>-->
-
+        <!-- <package android:name="us.zoom/videomeetings"/> -->
 
     </queries>
 
@@ -20,6 +19,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WidgetApp">
+        <receiver
+            android:name=".NewAppWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget_info" />
+        </receiver>
+
         <activity
             android:name=".Screens.ShortcutCustomize"
             android:exported="false" />
@@ -28,8 +39,8 @@
             android:exported="false" />
         <activity
             android:name=".Screens.CreateShortcut"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

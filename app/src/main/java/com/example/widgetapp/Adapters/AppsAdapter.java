@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.widgetapp.Action;
@@ -57,7 +58,8 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.AppViewHolder>
     public void onBindViewHolder(@NonNull AppsAdapter.AppViewHolder holder, int position) {
         Shortcut shortcut = availableShortcuts.get(position);
         holder.app_name.setText(shortcut.getName());
-        holder.app_icon.setBackground(shortcut.getLogo().getDrawable());
+        holder.app_icon.setBackgroundDrawable(shortcut.getLogo());
+//        holder.app_icon.setBackground(ContextCompat.getDrawable(context,R.drawable.messenger_icon));
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -72,6 +72,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         ImageButton iconEmail = findViewById(R.id.icon_email);
         Collections.addAll(iconsList,iconVideo,iconGallery,iconMusic,iconMusic,iconExplore,iconForward,iconFolder,iconShare,iconReport,iconNotes,iconGame,iconMessage,iconForum, iconFile, iconEmail);
 
+        appIcon.setBackground(MainActivity.currentShortcut.getLogo());
+
         colorPink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

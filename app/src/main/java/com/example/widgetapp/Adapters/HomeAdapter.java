@@ -58,7 +58,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
     public void onBindViewHolder(@NonNull HomeAdapter.ShortcutViewHolder holder, int position) {
         Action shortcut = shortcutsList.get(position);
         holder.shortcut_name.setText(shortcut.getName());
-        holder.shortcut_icon.setBackground(shortcut.getLogo().getDrawable());
+        holder.shortcut_icon.setBackground(shortcut.getLogo());
         holder.wholeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
