@@ -335,7 +335,14 @@ public class Shortcut {
         return new Intent(Intent.ACTION_VIEW,Uri.parse(" https://mail.google.com/mail/u/0/"));
     };
 
-    //Wechat
+    public Intent openWechat(Context context){
+        return openApp(context,"com.tencent.mm");
+    }
+
+    //reddit
+//    public Intent searchReddit(View view){
+//        return
+//    }
 
     
 
