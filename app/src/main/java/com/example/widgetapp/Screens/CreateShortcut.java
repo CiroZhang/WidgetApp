@@ -40,14 +40,12 @@ public class CreateShortcut extends AppCompatActivity {
 
         appName.setText(MainActivity.currentShortcut.getName());
 
+        nextButton.setClickable(false);
+        nextButton.setBackgroundResource(R.drawable.next_button_unchecked);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (MainActivity.currentInfo.isEmpty()) {
-                    MainActivity.currentInfo.add("none");
-                }
                 MainActivity.actionToAdd.setInfo((ArrayList<String>)MainActivity.currentInfo.clone());
-                MainActivity.currentInfo.clear();
                 openNextScreen();
             }
         });

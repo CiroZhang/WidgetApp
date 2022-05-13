@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public static Shortcut currentShortcut = new Shortcut();
     public static ArrayList<Action> shortcutActions = new ArrayList<>();
     public static Action actionToAdd = new Action();
-    public static ArrayList<String> currentInfo = new ArrayList<>();
+    public static ArrayList<String> currentInfo = new ArrayList<>(Arrays.asList("none","none","none"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +36,4 @@ public class MainActivity extends AppCompatActivity {
             shortcutActions.add(action);
         }
     }
-
 }

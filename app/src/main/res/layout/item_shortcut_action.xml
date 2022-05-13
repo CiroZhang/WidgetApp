@@ -9,13 +9,13 @@
     <ImageView
         android:id="@+id/shortcut_option_list_border"
         android:layout_width="352dp"
-        android:layout_height="152dp"
+        android:layout_height="295dp"
         android:background="@drawable/rounded_rectangle3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-<!--    change layout_height to 72dp for regular, 152dp for expanded-->
+<!--    change layout_height to 72dp for regular, 152dp for phone, 295 for fully expanded-->
 
     <TextView
         android:id="@+id/shortcut_option_name"
@@ -93,7 +93,7 @@
     <EditText
         android:id="@+id/phone_number_edittext"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="23dp"
         android:layout_marginStart="16dp"
         android:hint="Input"
@@ -115,5 +115,129 @@
         app:layout_constraintEnd_toEndOf="@id/phone_number_box_border"
         app:layout_constraintTop_toTopOf="@id/phone_number_box_border"
         app:layout_constraintBottom_toBottomOf="@id/phone_number_box_border"/>
+
+<!--    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <ImageView
+        android:id="@+id/subject_box_border"
+        android:layout_width="325dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="85dp"
+        android:background="@drawable/rounded_rectangle4"
+        android:visibility="visible"
+        android:clickable="false"
+        app:layout_constraintTop_toBottomOf="@id/shortcut_top_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/subject_box_line"
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:background="@drawable/rectangle1"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/subject_box_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/subject_textview"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:text="Subject"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="#617dbd"
+        android:textSize="12sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@id/subject_box_border"
+        app:layout_constraintTop_toTopOf="@id/subject_box_border" />
+
+    <EditText
+        android:id="@+id/subject_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginStart="16dp"
+        android:hint="Input"
+        android:textSize="16sp"
+        android:background="@null"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="@id/subject_box_border"
+        app:layout_constraintStart_toStartOf="@id/subject_box_border"/>
+
+    <ImageButton
+        android:id="@+id/subject_delete"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/delete_button"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/subject_box_border"
+        app:layout_constraintTop_toTopOf="@id/subject_box_border"
+        app:layout_constraintBottom_toBottomOf="@id/subject_box_border"/>
+
+<!--    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <ImageView
+        android:id="@+id/content_box_border"
+        android:layout_width="325dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="158dp"
+        android:background="@drawable/rounded_rectangle4"
+        android:visibility="visible"
+        android:clickable="false"
+        app:layout_constraintTop_toBottomOf="@id/shortcut_top_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/content_box_line"
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:background="@drawable/rectangle1"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/content_box_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/content_textview"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:text="Email content"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="#617dbd"
+        android:textSize="12sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@id/content_box_border"
+        app:layout_constraintTop_toTopOf="@id/content_box_border" />
+
+    <EditText
+        android:id="@+id/content_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginStart="16dp"
+        android:hint="Input"
+        android:textSize="16sp"
+        android:background="@null"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="@id/content_box_border"
+        app:layout_constraintStart_toStartOf="@id/content_box_border"/>
+
+    <ImageButton
+        android:id="@+id/content_delete"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/delete_button"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/content_box_border"
+        app:layout_constraintTop_toTopOf="@id/content_box_border"
+        app:layout_constraintBottom_toBottomOf="@id/content_box_border"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

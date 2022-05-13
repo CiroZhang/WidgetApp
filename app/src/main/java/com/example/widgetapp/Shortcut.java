@@ -72,7 +72,7 @@ public class Shortcut {
         else {
             switch (type) {
                 case Email:
-                    action = email(info.get(0).split(","), info.get(1), info.get(2));
+                    action = email(info.get(0), info.get(1), info.get(2));
                     break;
 
                 case Message:
@@ -173,10 +173,10 @@ public class Shortcut {
 //    public void setLogo(ImageView logo) { this.logo = logo; };
 
     //General Android
-    public Intent email(String[] addresses, String subject, String text) {
+    public Intent email(String address, String subject, String text) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_EMAIL, address);
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, text);
         return Intent.createChooser(intent, "Send Email");

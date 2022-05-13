@@ -380,7 +380,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         useDefaultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                appIcon.setBackgroundResource(R.drawable.messenger_icon); // TODO: change to each unique icon when finish adding to list of actions later
+                appIcon.setBackground(MainActivity.actionToAdd.getLogo());
                 appIcon.setVisibility(View.VISIBLE);
                 customIconBack.setVisibility(View.GONE);
                 customIconFront.setVisibility(View.GONE);
