@@ -38,7 +38,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
         private TextView shortcut_name;
         private ImageView shortcut_icon;
         private ImageView shortcut_icon_hidden;
-        private LinearLayout wholeLayout;
+        private ConstraintLayout wholeLayout;
 
         public ShortcutViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -111,6 +111,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
                         }
                     }
                 });
+            }
+        });
+        holder.shortcut_icon_hidden.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                shortcut.runTask(context);
             }
         });
         holder.shortcut_icon.setOnClickListener(new View.OnClickListener() {
