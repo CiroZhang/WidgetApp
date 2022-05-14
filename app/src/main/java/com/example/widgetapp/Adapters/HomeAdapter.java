@@ -37,12 +37,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
     public class ShortcutViewHolder extends RecyclerView.ViewHolder {
         private TextView shortcut_name;
         private ImageView shortcut_icon;
+        private ImageView shortcut_icon_hidden;
         private LinearLayout wholeLayout;
 
         public ShortcutViewHolder(@NonNull View itemView) {
             super(itemView);
             shortcut_name = itemView.findViewById(R.id.shortcut_name);
             shortcut_icon = itemView.findViewById(R.id.shortcut_icon);
+            shortcut_icon_hidden = itemView.findViewById(R.id.shortcut_icon_hidden);
             wholeLayout = itemView.findViewById(R.id.shortcut_full_icon);
         }
     }
@@ -59,6 +61,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
         Action shortcut = shortcutsList.get(position);
         holder.shortcut_name.setText(shortcut.getName());
         holder.shortcut_icon.setBackground(shortcut.getLogo());
+        if (shortcut.customLogo) {
+            holder.shortcut_icon_hidden.setBackground(shortcut.getLogo2());
+            holder.shortcut_icon_hidden.setVisibility(View.VISIBLE);
+        }
         holder.wholeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
