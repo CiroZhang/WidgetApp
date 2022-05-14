@@ -38,7 +38,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
         private TextView shortcut_name;
         private ImageView shortcut_icon;
         private ImageView shortcut_icon_hidden;
-        private ConstraintLayout wholeLayout;
+        private LinearLayout wholeLayout;
 
         public ShortcutViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,11 +65,33 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
             holder.shortcut_icon_hidden.setBackground(shortcut.getLogo2());
             holder.shortcut_icon_hidden.setVisibility(View.VISIBLE);
         }
-        holder.wholeLayout.setOnClickListener(new View.OnClickListener() {
+        //        holder.wholeLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                PopupMenu popupMenu = new PopupMenu(context, view);
+//                popupMenu.getMenuInflater().inflate(R.menu.menutest, popupMenu.getMenu());
+//                popupMenu.setForceShowIcon(true);
+//                popupMenu.show();
+//                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//                    @Override
+//                    public boolean onMenuItemClick(MenuItem menuItem) {
+//                        switch (menuItem.getItemId()) {
+//                            case R.id.item_1:
+//                                System.out.println("test 1 clicked");
+//                                return true;
+//                            case R.id.item_2:
+//                                System.out.println("test 2 clicked");
+//                                return true;
+//                            default:
+//                                return false;
+//                        }
+//                    }
+//                });
+//            }
+//        });
+        holder.shortcut_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                shortcut.runTask(context);
-
                 PopupMenu popupMenu = new PopupMenu(context, view);
                 popupMenu.getMenuInflater().inflate(R.menu.menutest, popupMenu.getMenu());
                 popupMenu.setForceShowIcon(true);
@@ -89,6 +111,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ShortcutViewHo
                         }
                     }
                 });
+            }
+        });
+        holder.shortcut_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                shortcut.runTask(context);
             }
         });
     }
