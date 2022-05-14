@@ -574,7 +574,6 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iconVideo.setBackgroundResource(R.drawable.icon_video_checked);
                 iconChanged = true;
                 icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_video);
                 appIcon.setVisibility(View.INVISIBLE);
