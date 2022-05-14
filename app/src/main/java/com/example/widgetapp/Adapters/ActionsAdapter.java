@@ -129,7 +129,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
 
         if (action.isChecked()) {
             holder.checkButton.setBackgroundResource(R.drawable.radio_button_checked);
-            if (action.getName().equals("Message...") || action.getName().equals("Call...") || action.getName().equals("Search for a location") || action.getName().equals("Share to WhatsApp") || action.getName().equals("Email...")) {
+            if (action.getName().equals("Message...") || action.getName().equals("Call...") || action.getName().equals("Search for a location") || action.getName().equals("Share to WhatsApp") || action.getName().equals("Email...") || action.getName().equals("Search in Facebook") || action.getName().equals("Open a website") || action.getName().equals("Share to Twitter") || action.getName().equals("Search in Twitter")) {
                 holder.phoneNumberBoxBorder.setVisibility(View.VISIBLE);
                 holder.phoneNumberBoxLine.setVisibility(View.VISIBLE);
                 holder.phoneNumberText.setVisibility(View.VISIBLE);
@@ -143,6 +143,31 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
 
                 if (action.getName().equals("Search for a location")) {
                     holder.phoneNumberText.setText("Location");
+                    holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                }
+
+                if (action.getName().equals("Share to WhatsApp")) {
+                    holder.phoneNumberText.setText("Message to be shared");
+                    holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                }
+
+                if (action.getName().equals("Search in Facebook")) {
+                    holder.phoneNumberText.setText("Content to be searched");
+                    holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                }
+
+                if (action.getName().equals("Open a website")) {
+                    holder.phoneNumberText.setText("URL / Content to be searched");
+                    holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                }
+
+                if (action.getName().equals("Share to Twitter")) {
+                    holder.phoneNumberText.setText("Content to be shared");
+                    holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                }
+
+                if (action.getName().equals("Search in Twitter")) {
+                    holder.phoneNumberText.setText("Content to be searched");
                     holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
                 }
 
@@ -202,7 +227,7 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
                     nextButton.setClickable(true);
                     nextButton.setBackgroundResource(R.drawable.next_button_checked);
 
-                    if (action.getName().equals("Message...") || action.getName().equals("Call...") || action.getName().equals("Search for a location") || action.getName().equals("Share to WhatsApp") || action.getName().equals("Email...")) {
+                    if (action.getName().equals("Message...") || action.getName().equals("Call...") || action.getName().equals("Search for a location") || action.getName().equals("Share to WhatsApp") || action.getName().equals("Email...") || action.getName().equals("Search in Facebook") || action.getName().equals("Open a website") || action.getName().equals("Share to Twitter") || action.getName().equals("Search in Twitter")) {
                         holder.phoneNumberBoxBorder.setVisibility(View.VISIBLE);
                         holder.phoneNumberBoxLine.setVisibility(View.VISIBLE);
                         holder.phoneNumberText.setVisibility(View.VISIBLE);
@@ -216,6 +241,31 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
 
                         if (action.getName().equals("Search for a location")) {
                             holder.phoneNumberText.setText("Location");
+                            holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                        }
+
+                        if (action.getName().equals("Share to WhatsApp")) {
+                            holder.phoneNumberText.setText("Message to be shared");
+                            holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                        }
+
+                        if (action.getName().equals("Search in Facebook")) {
+                            holder.phoneNumberText.setText("Content to be searched");
+                            holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                        }
+
+                        if (action.getName().equals("Open a website")) {
+                            holder.phoneNumberText.setText("URL / Content to be searched");
+                            holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                        }
+
+                        if (action.getName().equals("Share to Twitter")) {
+                            holder.phoneNumberText.setText("Content to be shared");
+                            holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                        }
+
+                        if (action.getName().equals("Search in Twitter")) {
+                            holder.phoneNumberText.setText("Content to be searched");
                             holder.phoneNumberEditText.setInputType(InputType.TYPE_CLASS_TEXT);
                         }
 
@@ -403,7 +453,6 @@ public class ActionsAdapter extends RecyclerView.Adapter<ActionsAdapter.ActionVi
                 else {
                     nextButton.setClickable(false);
                     nextButton.setBackgroundResource(R.drawable.next_button_unchecked);
-
                 }
             }
         });
