@@ -1,9 +1,11 @@
 package com.example.widgetapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,7 +25,12 @@ public class ShortcutCustomize extends AppCompatActivity {
     Activity activity = ShortcutCustomize.this;
     String appName = "";
     Boolean nameEntered = false;
+<<<<<<< HEAD
     String colorSelected = "";
+=======
+    Boolean iconChanged = false;
+    Drawable icon1, icon2;
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +85,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorPink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorPink.setBackgroundResource(R.drawable.color_pink_checked);
                     colorSelected = "pink";
@@ -102,6 +110,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_pink);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_pink);
@@ -111,6 +123,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorRed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorRed.setBackgroundResource(R.drawable.color_red_checked);
                     colorSelected = "red";
@@ -135,6 +148,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_red);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_red);
@@ -144,6 +161,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorOrange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorOrange.setBackgroundResource(R.drawable.color_orange_checked);
                     colorSelected = "orange";
@@ -168,6 +186,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_orange);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_orange);
@@ -177,6 +199,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorLightOrange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorLightOrange.setBackgroundResource(R.drawable.color_light_orange);
                     colorSelected = "light orange";
@@ -201,6 +224,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_light_orange);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_light_orange);
@@ -210,6 +237,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorYellow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorYellow.setBackgroundResource(R.drawable.color_yellow_checked);
                     colorSelected = "yellow";
@@ -234,6 +262,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_yellow);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_yellow);
@@ -243,6 +275,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorLime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorLime.setBackgroundResource(R.drawable.color_lime_checked);
                     colorSelected = "lime";
@@ -267,6 +300,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_lime);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_lime);
@@ -276,6 +313,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorGreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorGreen.setBackgroundResource(R.drawable.color_green_checked);
                     colorSelected = "green";
@@ -300,6 +338,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_green);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_green);
@@ -309,6 +351,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorDarkGreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorDarkGreen.setBackgroundResource(R.drawable.color_dark_green_checked);
                     colorSelected = "dark green";
@@ -333,6 +376,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_dark_green);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_dark_green);
@@ -342,6 +389,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorTeal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorTeal.setBackgroundResource(R.drawable.color_teal_checked);
                     colorSelected = "teal";
@@ -366,6 +414,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_teal);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_teal);
@@ -375,6 +427,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorLightBlue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorLightBlue.setBackgroundResource(R.drawable.color_light_blue_checked);
                     colorSelected = "light blue";
@@ -399,6 +452,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_light_blue);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_light_blue);
@@ -408,6 +465,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorBlue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorBlue.setBackgroundResource(R.drawable.color_blue_checked);
                     colorSelected = "blue";
@@ -432,6 +490,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_blue);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_blue);
@@ -441,6 +503,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorDarkBlue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorDarkBlue.setBackgroundResource(R.drawable.color_dark_blue_checked);
                     colorSelected = "dark blue";
@@ -465,6 +528,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_dark_blue);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_dark_blue);
@@ -474,6 +541,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorMagenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta_checked);
                     colorSelected = "magenta";
@@ -498,6 +566,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta_checked);
                     colorPurple.setBackgroundResource(R.drawable.color_purple);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_magenta);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_magenta);
@@ -507,6 +579,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         colorPurple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if (colorSelected.equals("")) {
                     colorPurple.setBackgroundResource(R.drawable.color_purple_checked);
                     colorSelected = "purple";
@@ -531,6 +604,10 @@ public class ShortcutCustomize extends AppCompatActivity {
                     colorMagenta.setBackgroundResource(R.drawable.color_magenta);
                     colorPurple.setBackgroundResource(R.drawable.color_purple_checked);
                 }
+=======
+                iconChanged = true;
+                icon1 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.color_background_purple);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconBack.setVisibility(View.VISIBLE);
                 customIconBack.setBackgroundResource(R.drawable.color_background_purple);
@@ -541,7 +618,12 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 iconVideo.setBackgroundResource(R.drawable.icon_video_checked);
+=======
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_video);
+>>>>>>> a3fbede7e32043b82da0edab2eb6ffca4d99c587
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_video);
@@ -551,6 +633,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconGallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_gallery);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_gallery);
@@ -560,6 +644,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_music);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_music);
@@ -569,6 +655,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconExplore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_explore);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_explore);
@@ -578,6 +666,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconForward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_forward);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_forward);
@@ -587,6 +677,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconFolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_folder);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_folder);
@@ -596,6 +688,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_share);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_share);
@@ -605,6 +699,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_report);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_report);
@@ -614,6 +710,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_notes);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_notes);
@@ -623,6 +721,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_game);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_game);
@@ -632,6 +732,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_message);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_message);
@@ -641,6 +743,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_forum);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_forum);
@@ -650,6 +754,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_file);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_file);
@@ -659,6 +765,8 @@ public class ShortcutCustomize extends AppCompatActivity {
         iconEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = true;
+                icon2 = ContextCompat.getDrawable(activity.getApplicationContext(),R.drawable.icon_background_email);
                 appIcon.setVisibility(View.INVISIBLE);
                 customIconFront.setVisibility(View.VISIBLE);
                 customIconFront.setBackgroundResource(R.drawable.icon_background_email);
@@ -669,6 +777,9 @@ public class ShortcutCustomize extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (iconChanged) {
+                    MainActivity.actionToAdd.setLogo(icon1,icon2);
+                }
                 MainActivity.actionToAdd.setName(appName);
                 MainActivity.shortcutsList.add(MainActivity.actionToAdd);
                 finishAffinity();
@@ -718,6 +829,7 @@ public class ShortcutCustomize extends AppCompatActivity {
         useDefaultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconChanged = false;
                 appIcon.setBackground(MainActivity.actionToAdd.getLogo());
                 appIcon.setVisibility(View.VISIBLE);
                 customIconBack.setVisibility(View.GONE);

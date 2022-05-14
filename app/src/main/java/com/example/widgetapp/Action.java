@@ -15,6 +15,8 @@ public class Action {
     private Shortcut task;
     private boolean checked = false;
     private Drawable logo;
+    private Drawable logo2;
+    public boolean customLogo = false;
 
     public Action() {}
     public Action(String name, String description, Drawable logo, Shortcut shortcut) {
@@ -31,7 +33,12 @@ public class Action {
     public boolean isChecked() { return this.checked; }
     public void setChecked(boolean status) { this.checked = status; }
     public Drawable getLogo() { return logo; };
-    public void setLogo(Drawable logo) { this.logo = logo; };
+    public Drawable getLogo2() { return logo2; }
+    public void setLogo(Drawable logo1, Drawable logo2) {
+        this.logo = logo1;
+        this.logo2 = logo2;
+        customLogo = true;
+    }
     public ArrayList<String> getInfo() { return this.task.getInfo(); }
     public void setInfo(ArrayList<String> info) { this.task.setInfo(info); }
     public Shortcut getTask() { return this.task; }
